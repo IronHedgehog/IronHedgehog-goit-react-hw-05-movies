@@ -2,8 +2,10 @@ import { GetPopularFilm } from '../../services/FilmAPI';
 import { useState, useEffect } from 'react';
 import { Link, Route } from 'react-router-dom';
 import MovieDetails from './MovieDetailsPage';
+import { useLocation } from 'react-router-dom';
 
 const PopularListItem = () => {
+  const location = useLocation();
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
@@ -16,7 +18,14 @@ const PopularListItem = () => {
         <ul>
           {films.map(film => (
             <li key={film.id}>
-              <Link to={'/movies/' + film.id}>
+              <Link
+                to={{
+                  pathname: '/movies/' + film.id,
+                  state: {
+                    from: location,
+                  },
+                }}
+              >
                 <p>{film.title}</p>
               </Link>
             </li>

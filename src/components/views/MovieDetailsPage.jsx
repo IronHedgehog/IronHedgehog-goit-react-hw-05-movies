@@ -27,11 +27,11 @@ const MovieDetails = () => {
   useEffect(() => {
     moviesId && GetFilmById(moviesId).then(setMovieInfo);
   }, [moviesId]);
-  const firstState = useRef(location.state.from);
+
+  const loca = useRef(location.state.from);
 
   const backButtonClick = () => {
-    history.push(firstState.current);
-    console.log(location);
+    history.push(loca.current);
   };
 
   const backToHome = () => {

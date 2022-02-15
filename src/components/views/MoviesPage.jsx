@@ -44,7 +44,7 @@ const MoviesPage = () => {
                     to={{
                       pathname: '/movies/' + film.id,
                       state: {
-                        from: location,
+                        from: location
                       },
                     }}
                   >
