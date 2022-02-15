@@ -1,4 +1,4 @@
-import { useEffect, useState, lazy, Suspense } from 'react';
+import { useEffect, useState, lazy, Suspense, useRef } from 'react';
 import {
   Route,
   useParams,
@@ -27,11 +27,11 @@ const MovieDetails = () => {
   useEffect(() => {
     moviesId && GetFilmById(moviesId).then(setMovieInfo);
   }, [moviesId]);
+  const firstState = useRef(location.state.from);
 
   const backButtonClick = () => {
-    // history.goBack();
-    // history.push(location.state.from);
-    history.goBack();
+    history.push(firstState.current);
+    console.log(location);
   };
 
   const backToHome = () => {
