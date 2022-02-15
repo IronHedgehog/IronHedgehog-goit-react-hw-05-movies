@@ -11,8 +11,6 @@ const ReviewsPage = () => {
 
   return (
     <>
-      <br />
-
       {reviews.length > 0 ? (
         reviews.map(review => (
           <li key={review.author}>
