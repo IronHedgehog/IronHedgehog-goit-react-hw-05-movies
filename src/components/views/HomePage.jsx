@@ -1,6 +1,6 @@
 import { GetPopularFilm } from '../../services/FilmAPI';
 import { useState, useEffect } from 'react';
-import {  Link,  Route } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import MovieDetails from './MovieDetailsPage';
 
 const PopularListItem = () => {
@@ -23,6 +23,7 @@ const PopularListItem = () => {
           ))}
         </ul>
       )}
+
       <Route path="/movies/:moviesId">
         <MovieDetails />
       </Route>
