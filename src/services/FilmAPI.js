@@ -35,7 +35,6 @@ export const GetByKeyword = async (query = 'car', page = 1) => {
 
 export const GetFilmById = async movie_id => {
   try {
-    console.log(movie_id);
     const res = await axios.get(
       `movie/${movie_id}?api_key=5456eae918aecb3e2e60ac718603b47e&language=en-US`,
     );
@@ -44,6 +43,38 @@ export const GetFilmById = async movie_id => {
     }
 
     return res.data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+// https://api.themoviedb.org/3/movie/:moviesId?api_key=5456eae918aecb3e2e60ac718603b47e&language=en-US
+
+export const CastFetch = async movie_id => {
+  try {
+    const res = await axios.get(
+      `movie/${movie_id}/credits?api_key=5456eae918aecb3e2e60ac718603b47e&language=en-US`,
+    );
+    if (!res.data.cast) {
+      throw new Error('Not found');
+    }
+
+    return res.data.cast;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const ReviewsFetch = async movie_id => {
+  try {
+    const res = await axios.get(
+      `movie/${movie_id}/reviews?api_key=5456eae918aecb3e2e60ac718603b47e&language=en-US`,
+    );
+    if (!res.data.results) {
+      throw new Error('Not found');
+    }
+
+    return res.data.results;
   } catch (err) {
     throw err;
   }

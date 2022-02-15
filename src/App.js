@@ -14,8 +14,6 @@ function App() {
         <Route path="/" exact>
           <HomePage />
         </Route>
-        <Route path="/movies/:movieId/reviews"></Route>
-        <Route path="/movies/:movieId/cast"></Route>
         <Route path="/movies/:moviesId">
           <MovieDetails />
         </Route>
