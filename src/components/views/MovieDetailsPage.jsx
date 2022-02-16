@@ -51,9 +51,9 @@ const MovieDetails = () => {
           <div key={movieInfo.id}>
             <img
               src={`https://image.tmdb.org/t/p/w300${movieInfo.poster_path}`}
-              alt={movieInfo.original_title}
+              alt={movieInfo.title}
             />
-            <h1>{movieInfo.original_title}</h1>
+            <h1>{movieInfo.title}</h1>
             <h2>Release date: {movieInfo.release_date}</h2>
             <h2>User scores: {movieInfo.vote_average}</h2>
             <hr />
