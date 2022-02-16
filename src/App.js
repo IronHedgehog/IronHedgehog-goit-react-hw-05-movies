@@ -1,9 +1,10 @@
 import { lazy, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Container from './components/Container/Container';
 import './App.css';
 import Links from './components/Links/Links';
 import { TailSpin } from 'react-loader-spinner';
+import NotFound from './components/views/NotFound';
 // import HomePage from './components/views/HomePage.jsx';
 // import MoviesPage from './components/views/MoviesPage';
 // import MovieDetails from './components/views/MovieDetailsPage';
@@ -35,6 +36,10 @@ function App() {
           <Route path="/movies">
             <MoviesPage />
           </Route>
+          <Route path="/not-found">
+            <NotFound />
+          </Route>
+          <Redirect to="/not-found" />
         </Switch>
       </Suspense>
     </Container>
