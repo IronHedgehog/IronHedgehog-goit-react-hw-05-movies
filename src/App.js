@@ -4,7 +4,7 @@ import Container from './components/Container/Container';
 import './App.css';
 import Links from './components/Links/Links';
 import { TailSpin } from 'react-loader-spinner';
-import NotFound from './components/views/NotFound';
+// import NotFound from './components/views/NotFound';
 // import HomePage from './components/views/HomePage.jsx';
 // import MoviesPage from './components/views/MoviesPage';
 // import MovieDetails from './components/views/MovieDetailsPage';
@@ -19,6 +19,9 @@ const MovieDetails = lazy(() =>
   import(
     './components/views/MovieDetailsPage' /* webpackChunkName: "MovieDetailsPage" */
   ),
+);
+const NotFound = lazy(() =>
+  import('./components/views/NotFound' /* webpackChunkName: "NotFound" */),
 );
 
 function App() {
