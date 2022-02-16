@@ -15,7 +15,7 @@ const CastPage = () => {
       <br />
       {cast &&
         cast.map(actor => (
-          <li key={actor.id} className="oneMovie_item">
+          <li key={actor.id} >
             {actor.profile_path ? (
               <img
                 src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
